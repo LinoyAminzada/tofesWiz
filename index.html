@@ -109,22 +109,19 @@
 </head>
 <body>
     <div class="container">
-        <h1>פניה למרכז מילואים 360 <br> בנות/בני זוג לשעבר</h1>
-        
-        <div>
-            <p>טופס זה מיועד לבני או בנות זוג לשעבר של משרתי מילואים, שיש להם לפחות ילד אחד משותף מתחת לגיל 14 (נכון למועד תחילת השירות). באמצעות טופס זה תוכלו להגיש בקשה לקבלת סיוע כספי מקרן הסיוע למשרתי המילואים.</p>
-        </div>
+        <h1>פניה לקרן הסיוע מילואים 360 <br> בני/בנות זוג לשעבר</h1>
 
         <form id="supportForm">
             <!-- בחירת נושא -->
             <div class="form-section">
                 <div class="form-group">
                     <label for="topic"><span class="required-field">*</span> נושא פנייה:</label>
-                    <select id="topic" name="topic" required onchange="showInfoBox()">
+                    <select id="topic" name="topic" onchange="showInfoBox()">
                         <option value="" disabled selected>בחירה</option>
                         <option value="one-time-grant">מענק חד"פ למי שאינו בן זוג של משרת מילואים</option>
                         <option value="babysitter">טיפול בילדים (בייביסיטר)</option>
                         <option value="income-loss">אובדן הכנסה של בן/בת זוג לשעבר</option>
+                        <option value="income-loss-independent">אובדן הכנסה של בן/בת זוג לשעבר - עצמאים</option>
                         <option value="unemployed-grant">מענק חד"פ לבן/בת זוג לשעבר שאינם עובדים</option>
                         <option value="maternity-leave-grant">מענק לבת זוג לשעבר שלא חזרה מחל"ד</option>
                         <option value="mental-health">השתתפות בעלויות טיפול נפשי ללוחמים</option>
@@ -235,30 +232,26 @@
 
             <!-- פרטי בן/בת הזוג לשעבר (מגיש הבקשה) -->
             <div class="form-section">
-                <h2>פרטי מגיש/ת הבקשה</h2>
+                <h2>פרטי מגיש/ת הבקשה (בן/בת הזוג לשעבר)</h2>
                     <div class="form-group">
                         <label for="applicant-id"><span class="required-field">*</span> תעודת זהות:</label>
-                        <input type="text" id="applicant-id" name="applicant-id" required>
+                        <input type="text" id="applicant-id" name="applicant-id">
                     </div>
                     <div class="form-group">
                         <label for="applicant-name"><span class="required-field">*</span> שם מלא:</label>
-                        <input type="text" id="applicant-name" name="applicant-name" required>
+                        <input type="text" id="applicant-name" name="applicant-name">
                     </div>
                     <div class="form-group">
                         <label for="applicant-phone"><span class="required-field">*</span> מספר טלפון לחזרה:</label>
-                        <input type="tel" id="applicant-phone" name="applicant-phone" required>
+                        <input type="tel" id="applicant-phone" name="applicant-phone">
                     </div>
                     <div class="form-group">
                         <label for="applicant-email"><span class="required-field">*</span> כתובת EMAIL ליצירת קשר:</label>
-                        <input type="email" id="applicant-email" name="applicant-email" required>
+                        <input type="email" id="applicant-email" name="applicant-email">
                     </div>
                     <div class="form-group">
                         <label for="applicant-address"><span class="required-field">*</span> כתובת מגורים:</label>
-                        <input type="text" id="applicant-address" name="applicant-address" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="applicant-address"><span class="required-field">*</span> שם האם:</label>
-                        <input type="text" id="applicant-address" name="applicant-address" required>
+                        <input type="text" id="applicant-address" name="applicant-address">
                     </div>
                 </div>
 
@@ -267,19 +260,15 @@
                 <h2>פרטי משרת/ת המילואים</h2>
                 <div class="form-group">
                     <label for="soldier-id"><span class="required-field">*</span> תעודת זהות:</label>
-                    <input type="text" id="soldier-id" name="soldier-id" required>
+                    <input type="text" id="soldier-id" name="soldier-id">
                 </div>
                 <div class="form-group">
                     <label for="soldier-name"><span class="required-field">*</span> שם מלא:</label>
-                    <input type="text" id="soldier-name" name="soldier-name" required>
+                    <input type="text" id="soldier-name" name="soldier-name">
                 </div>
                 <div class="form-group">
                         <label for="applicant-address"><span class="required-field">*</span> כתובת מגורים:</label>
-                        <input type="text" id="applicant-address" name="applicant-address" required>
-                    </div>
-                <div class="form-group">
-                        <label for="applicant-address"><span class="required-field">*</span> שם האם:</label>
-                        <input type="text" id="applicant-address" name="applicant-address" required>
+                        <input type="text" id="applicant-address" name="applicant-address">
                     </div>
             </div>
 
@@ -287,34 +276,18 @@
             <div class="form-section">
                 <h2>פרטים אודות תקופת השירות</h2>
                <div class="form-group">
-                    <label for="children-count">כמה מילדיכם המשותפים היו מתחת לגיל 14 בתחילת השירות במילואים?</label>
-                    <input type="number" id="children-count" name="children-count" min="1" required onchange="createChildrenAgeFields()">
+                    <label for="children-count">מהו מספר ילדיכם המשותפים?</label>
+<input type="number" id="children-count" name="children-count" min="1" onchange="createChildrenAgeFields()" onkeydown="preventFormSubmitOnEnter(event)">
                 </div>
 
                 <!-- קונטיינר שמוסתר בהתחלה -->
                 <div class="form-group hidden" id="children-age-container">
-                    <label>גילאי הילדים בתחילת שירות המילואים:</label>
                     <div id="children-age-fields"></div>
                 </div>
 
                 <div class="form-group">
-                    <label for="custody-arrangement">מהו הסדר השהייה הקיים בינך לבין ההורה הנוסף במילואים?</label>
-                    <select id="custody-arrangement" name="custody-arrangement" required>
-                        <option value="" selected disabled>בחר/י אפשרות</option>
-                        <option value="full-custody">הילדים מתגוררים אצלי באופן מלא (משמורת מלאה)</option>
-                        <option value="most-time">הילדים שוהים אצלי ברוב הזמן (לפחות 5 ימים בשבוע)</option>
-                        <option value="shared">שהות משותפת – כחצי מהשבוע אצל כל אחד מאיתנו</option>
-                        <option value="limited">הילדים שוהים ברוב הזמן אצל ההורה השני (אצלי יום-יומיים בשבוע)</option>
-                        <option value="informal-frequent">אין הסדר פורמלי, אך הילדים שוהים איתי לעיתים קרובות</option>
-                        <option value="flexible">אין הסדר קבוע – חלוקה גמישה לפי הצורך</option>
-                        <option value="other">אחר</option>
-                    </select>
-                </div>                
-
-
-                <div class="form-group">
-                    <label>האם נדרשו שינויים בהסדרי הטיפול בילדים או בתמיכה הכלכלית בעקבות שירות המילואים?</label>
-                    <select id="arrangement-changes" name="arrangement-changes" required>
+                    <label>האם בעקבות שירות המילואים נדרשה התאמה כלשהי בהסדרים הקיימים סביב הטיפול בילדים?</label>
+                    <select id="arrangement-changes" name="arrangement-changes">
                         <option value="" selected disabled>בחר/י אפשרות</option>
                         <option value="no-changes">לא, ההסדרים הקיימים נמשכו כרגיל</option>
                         <option value="agreed-changes">כן, נעשו התאמות בהסכמה והן יושמו במלואן</option>
@@ -325,51 +298,6 @@
                     </select>
                 </div>
 
-                                <div class="form-group">
-                    <label>האם היו לך הוצאות נוספות שנגרמו כתוצאה משירות המילואים?</label>
-                    <div class="radio-group">
-                        <input type="radio" id="extra-expenses-yes" name="extra-expenses" value="yes" onchange="toggleExtraExpensesFollowUp(true)">
-                        <label for="extra-expenses-yes" style="display:inline;">כן</label>
-                        
-                        <input type="radio" id="extra-expenses-no" name="extra-expenses" value="no" onchange="toggleExtraExpensesFollowUp(false)">
-                        <label for="extra-expenses-no" style="display:inline;">לא</label>
-                    </div>
-                </div>
-                
-                <!-- שאלת המשך להוצאות נוספות -->
-                <div id="extra-expenses-follow-up" class="form-group hidden">
-                    <label>רק אם תרצה/י, ציין/י אילו הוצאות נוספות היו לך:</label>
-                    <div class="checkbox-group">
-                        <div class="checkbox-container">
-                            <input type="checkbox" id="expense-babysitter" name="expenses[]" value="babysitter">
-                            <label for="expense-babysitter" style="display:inline;">בייביסיטר/מטפלת</label>
-                        </div>
-                        <div class="checkbox-container">
-                            <input type="checkbox" id="expense-daycare" name="expenses[]" value="daycare">
-                            <label for="expense-daycare" style="display:inline;">צהרון/מסגרת לילדים</label>
-                        </div>
-                        <div class="checkbox-container">
-                            <input type="checkbox" id="expense-transportation" name="expenses[]" value="transportation">
-                            <label for="expense-transportation" style="display:inline;">הסעות</label>
-                        </div>
-                        <div class="checkbox-container">
-                            <input type="checkbox" id="expense-therapy" name="expenses[]" value="therapy">
-                            <label for="expense-therapy" style="display:inline;">תמיכה נפשית/טיפולים</label>
-                        </div>
-                        <div class="checkbox-container">
-                            <input type="checkbox" id="expense-activities" name="expenses[]" value="activities">
-                            <label for="expense-activities" style="display:inline;">חוגים/פעילויות לילדים</label>
-                        </div>
-                        <div class="checkbox-container">
-                            <input type="checkbox" id="expense-travel" name="expenses[]" value="travel">
-                            <label for="expense-travel" style="display:inline;">הוצאות נסיעה מוגברות</label>
-                        </div>
-                        <div class="checkbox-container">
-                            <input type="checkbox" id="expense-other" name="expenses[]" value="other">
-                            <label for="expense-other" style="display:inline;">אחר</label>
-                        </div>
-                    </div>
-                </div>
 
                 <div class="form-group">
                     <label>האם חל שינוי במצב התעסוקתי שלך בעקבות התגייסות ההורה הנוסף למילואים?</label>
@@ -416,27 +344,27 @@
                 <h2>פרטי חשבון בנק לקבלת הפיצוי</h2>
                 <div class="form-group">
                     <label for="applicant-id"><span class="required-field">*</span> שם הבנק: </label>
-                    <input type="text" id="applicant-id" name="applicant-id" required>
+                    <input type="text" id="applicant-id" name="applicant-id">
                 </div>
                 <div class="form-group">
                     <label for="applicant-name"><span class="required-field">*</span> מספר הבנק:</label>
-                    <input type="text" id="applicant-name" name="applicant-name" required>
+                    <input type="text" id="applicant-name" name="applicant-name">
                 </div>
                 <div class="form-group">
                     <label for="applicant-phone"><span class="required-field">*</span> מספר סניף:</label>
-                    <input type="tel" id="applicant-phone" name="applicant-phone" required>
+                    <input type="tel" id="applicant-phone" name="applicant-phone">
                 </div>
                 <div class="form-group">
                     <label for="applicant-email"><span class="required-field">*</span> מספר חשבון:</label>
-                    <input type="email" id="applicant-email" name="applicant-email" required>
+                    <input type="email" id="applicant-email" name="applicant-email">
                 </div>
                 <div class="form-group">
                     <label for="applicant-address"><span class="required-field">*</span> שם בעל החשבון:</label>
-                    <input type="text" id="applicant-address" name="applicant-address" required>
+                    <input type="text" id="applicant-address" name="applicant-address">
                 </div>
                 <div class="form-group">
                     <label for="applicant-address"><span class="required-field">*</span> מספר תעודת זהות של בעל החשבון:</label>
-                    <input type="text" id="applicant-address" name="applicant-address" required>
+                    <input type="text" id="applicant-address" name="applicant-address">
                 </div>
             </div>
                 
@@ -445,15 +373,15 @@
                 <h2>העלאת קבצים</h2>
                 <div class="form-group">
                     <label for="id-upload"><span class="required-field">*</span> צילום תעודת זהות+ספח:</label>
-                    <input type="file" id="id-upload" name="id-upload" class="file-upload" required>
+                    <input type="file" id="id-upload" name="id-upload" class="file-upload">
                 </div>
                 <div class="form-group">
                     <label for="bank-upload"><span class="required-field">*</span> אישור ניהול חשבון בנק:</label>
-                    <input type="file" id="bank-upload" name="bank-upload" class="file-upload" required>
+                    <input type="file" id="bank-upload" name="bank-upload" class="file-upload">
                 </div>
                 <div class="form-group">
                     <label for="divorce-upload"><span class="required-field">*</span> הסכם גירושין:</label>
-                    <input type="file" id="divorce-upload" name="divorce-upload" class="file-upload" required>
+                    <input type="file" id="divorce-upload" name="divorce-upload" class="file-upload">
                 </div>
                 <div class="form-group">
                     <label for="additional-docs">קבצים נוספים:</label>
@@ -465,19 +393,19 @@
             <div class="form-section">
                 <h2>אישור הצהרות</h2>
                 <div class="checkbox-container">
-                    <input type="checkbox" id="declaration1" name="declarations[]" value="data-correct" required>
+                    <input type="checkbox" id="declaration1" name="declarations[]" value="data-correct">
                     <label for="declaration1" style="display:inline;"><span class="required-field">*</span> הנני מצהיר/ה כי כלל הנתונים שנמסרו במסגרת טופס זה נכונים.</label>
                 </div>
                 <div class="checkbox-container">
-                    <input type="checkbox" id="declaration2" name="declarations[]" value="law-aware" required>
+                    <input type="checkbox" id="declaration2" name="declarations[]" value="law-aware">
                     <label for="declaration2" style="display:inline;"><span class="required-field">*</span> ידוע לי כי מסירת פרטים שאינם נכונים מהווה עבירה על החוק.</label>
                 </div>
                 <div class="checkbox-container">
-                    <input type="checkbox" id="declaration3" name="declarations[]" value="data-use" required>
+                    <input type="checkbox" id="declaration3" name="declarations[]" value="data-use">
                     <label for="declaration3" style="display:inline;"><span class="required-field">*</span> אני מסכים/ה כי הנתונים שנמסרו ישמשו לצורך בחינת זכאותי לסיוע.</label>
                 </div>
                 <div class="checkbox-container">
-                    <input type="checkbox" id="declaration4" name="declarations[]" value="more-docs" required>
+                    <input type="checkbox" id="declaration4" name="declarations[]" value="more-docs">
                     <label for="declaration4" style="display:inline;"><span class="required-field">*</span> אני מבין/ה כי הקרן רשאית לבקש מסמכים נוספים לצורך בחינת בקשתי.</label>
                 </div>
             </div>
@@ -486,7 +414,7 @@
             <div class="form-section">
                 <div class="form-group">
                     <label for="signature"><span class="required-field">*</span> חתימת המגיש/ה:</label>
-                    <input type="text" id="signature" name="signature" required>
+                    <input type="text" id="signature" name="signature">
                  </div>
                 <button type="submit">שלח/י את הבקשה</button>
             </div>
@@ -512,31 +440,35 @@
             }
         }
 
-        function createChildrenAgeFields() {
-            const childrenCount = parseInt(document.getElementById('children-count').value);
-            const container = document.getElementById('children-age-container');
-            const fieldsContainer = document.getElementById('children-age-fields');
-            fieldsContainer.innerHTML = '';
-            
-            if (childrenCount > 0) {
-                // מציג את הקונטיינר שמכיל את הכותרת + השדות
-                container.classList.remove('hidden');
-                
-                // יוצר את השדות עצמם
-                for (let i = 1; i <= childrenCount; i++) {
-                    const field = document.createElement('div');
-                    field.className = 'form-group';
-                    field.innerHTML = `
-                        <label for="child-age-${i}">גיל ילד ${i}:</label>
-                        <input type="number" id="child-age-${i}" name="child-age-${i}" min="0" max="21" required>
-                    `;
-                    fieldsContainer.appendChild(field);
-                }
-            } else {
-                // מסתיר את הקונטיינר אם מספר הילדים אינו חיובי
-                container.classList.add('hidden');
-            }
+function createChildrenAgeFields() {
+    const childrenCount = parseInt(document.getElementById('children-count').value);
+    const container = document.getElementById('children-age-container');
+    const fieldsContainer = document.getElementById('children-age-fields');
+    fieldsContainer.innerHTML = '';
+    
+    if (childrenCount > 0) {
+        container.classList.remove('hidden');
+        
+        for (let i = 1; i <= childrenCount; i++) {
+            const fieldSet = document.createElement('div');
+            fieldSet.className = 'form-group';
+            fieldSet.innerHTML = `
+                <h4>פרטי ילד ${i}</h4>
+                <label for="child-name-${i}">שם הילד:</label>
+                <input type="text" id="child-name-${i}" name="child-name-${i}">
+
+                <label for="child-id-${i}">תעודת זהות:</label>
+                <input type="text" id="child-id-${i}" name="child-id-${i}" pattern="[0-9]{9}">
+
+                <label for="child-birthdate-${i}">תאריך לידה:</label>
+                <input type="date" id="child-birthdate-${i}" name="child-birthdate-${i}">
+            `;
+            fieldsContainer.appendChild(fieldSet);
         }
+    } else {
+        container.classList.add('hidden');
+    }
+}
                 
         // פונקציה להצגת/הסתרת שאלות המשך
         function toggleContactFollowUp(show) {
@@ -570,12 +502,14 @@
             }
         }
         
-        // הגשת הטופס
-        document.getElementById('supportForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('הטופס נשלח בהצלחה!');
-            // כאן ניתן להוסיף קוד לשליחת הטופס לשרת
-        });
+        function preventFormSubmitOnEnter(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        createChildrenAgeFields(); // גם מפעיל את הפונקציה, כאילו המשתמש אישר
+    }
+}
+
+    
     </script>
 </body>
 </html>
